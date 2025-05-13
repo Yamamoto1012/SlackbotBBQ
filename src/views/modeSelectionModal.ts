@@ -29,7 +29,7 @@ export const createModeSelectionModal = (channelId: string): View => {
         type: 'section',
         text: {
           type: 'mrkdwn',
-          text: '🎯 *ランダム英字生成機へようこそ！*\n\nモードを選択して、運試しをしましょう！'
+          text: '🎯 *BBQガチャへようこそ！*\n\nモードを選択して、運試しをしましょう！'
         }
       },
       {

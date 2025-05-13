@@ -54,19 +54,55 @@ app.view('mode_selection', async ({ ack, view, client }) => {
         : selectedMode === 'bbq_95'
         ? generateRandomCharsWithBBQ95()
         : generateRandomChars();
-    await client.chat.postMessage({
-      channel: channelId,
-      text: `ランダム英字生成結果: *${randomChars}*`,
-      blocks: [
-        {
-          type: 'section',
-          text: {
-            type: 'mrkdwn',
-            text: `ランダム英字生成結果: *${randomChars}*`,
+    
+    // BBQが出た場合のメッセージと画像
+    if (randomChars === 'BBQ') {
+      await client.chat.postMessage({
+        channel: channelId,
+        text: "ランダム英字生成結果: *BBQ*",
+        blocks: [
+          {
+            type: 'section',
+            text: {
+              type: 'mrkdwn',
+              text: "ランダム英字生成結果: *BBQ*",
+            },
           },
-        },
-      ],
-    });
+        ],
+      });
+      await client.chat.postMessage({
+        channel: channelId,
+        text: '肉食え肉！',
+        blocks: [
+          {
+            type: 'section',
+            text: {
+              type: 'mrkdwn',
+              text: '肉食え肉！',
+            },
+          },
+          {
+            type: 'image',
+            image_url: 'https://images.pexels.com/photos/533325/pexels-photo-533325.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            alt_text: 'BBQの画像'
+          }
+        ]
+      });
+    } else {
+      await client.chat.postMessage({
+        channel: channelId,
+        text: `ランダム英字生成結果: *${randomChars}*`,
+        blocks: [
+          {
+            type: 'section',
+            text: {
+              type: 'mrkdwn',
+              text: `ランダム英字生成結果: *${randomChars}*`,
+            },
+          },
+        ],
+      });
+    }
   } catch (error) {
     console.error('モーダル送信エラー:', error);
   }
