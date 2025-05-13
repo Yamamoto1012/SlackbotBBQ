@@ -1,0 +1,24 @@
+{
+  "name": "random-bbq-slackbot",
+  "version": "1.0.0",
+  "description": "ランダム英字生成SlackBot",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "ts-node src/app.ts",
+    "watch": "tsc -w"
+  },
+  "keywords": ["slack", "bot", "random"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/bolt": "^3.17.0",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "ts-node": "^10.9.2"
+  }
+}
