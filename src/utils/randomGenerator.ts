@@ -31,4 +31,23 @@ export const generateRandomCharsWithBBQ = (): string => {
   
   // 通常のランダム生成
   return generateRandomChars();
-}; 
+};
+
+/**
+ * BBQ確率95%モードでランダムな3文字の英字を生成する
+ * @returns 生成された3文字の英字
+ */
+export const generateRandomCharsWithBBQ95 = (): string => {
+  const BBQ_PROBABILITY = 0.95;
+
+  // ランダムな値を生成
+  const randomValue = Math.random();
+
+  // BBQ確率に基づいて判定
+  if (randomValue < BBQ_PROBABILITY) {
+    return 'BBQ';
+  }
+
+  // 通常のランダム生成
+  return generateRandomChars();
+};

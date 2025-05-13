@@ -5,9 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/app.js",
-    "dev": "ts-node src/app.ts",
-    "watch": "tsc -w"
+    "package": "rm -rf dist && npm run build && zip -r function.zip dist node_modules package.json"
   },
   "keywords": ["slack", "bot", "random"],
   "author": "",
@@ -15,9 +13,12 @@
   "dependencies": {
     "@slack/bolt": "^3.17.0",
     "dotenv": "^16.4.5",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.2",
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/lib-dynamodb": "^3.0.0"
   },
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.0",
     "@types/node": "^20.11.30",
     "ts-node": "^10.9.2"
   }

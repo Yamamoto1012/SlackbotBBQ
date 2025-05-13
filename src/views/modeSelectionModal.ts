@@ -74,6 +74,14 @@ export const createModeSelectionModal = (channelId: string): View => {
                 emoji: true
               },
               value: 'bbq_20x'
+            },
+            {
+              text: {
+                type: 'plain_text',
+                text: '🌟 BBQ出現確率95%モード',
+                emoji: true
+              },
+              value: 'bbq_95'
             }
           ]
         },
